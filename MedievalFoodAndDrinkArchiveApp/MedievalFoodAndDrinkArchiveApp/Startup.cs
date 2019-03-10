@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MedievalFoodAndDrinkArchiveApp.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,9 @@ namespace MedievalFoodAndDrinkArchiveApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Use the same FileDishRepository per web request (= AddScoped). Dependency of type IDishRepository on runtime will use object of type FileDishRepository.
+            services.AddScoped<IDishRepository, FileDishRepository>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
