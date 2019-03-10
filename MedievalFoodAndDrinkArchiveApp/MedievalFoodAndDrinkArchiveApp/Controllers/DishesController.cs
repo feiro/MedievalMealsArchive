@@ -48,7 +48,7 @@ namespace MedievalFoodAndDrinkArchiveApp.Controllers
         }
 
         /*
-         * Create a new dish / Update an existing dish in repository.
+         * Create a new dish in repository.
          */
         [HttpPost]
         public IActionResult Post([FromBody] Dish dish)
@@ -61,6 +61,33 @@ namespace MedievalFoodAndDrinkArchiveApp.Controllers
             }
             var result = _repository.CreateDish(dish);
             return CreatedAtAction("Get", new {id = dish.Id}, result);
+        }
+
+        /**
+         * Update a dish in repository.
+         */
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Dish dish)
+        {
+            // Execute some plausibility checks.
+
+            if (id != dish.Id)
+            {
+                return BadRequest();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (_repository.GetDishById(id) == null)
+            {
+                return NotFound();
+            }
+
+            var result = _repository.UpdateDish(dish);
+            return Ok(result);
         }
 
     }

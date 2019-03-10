@@ -43,7 +43,11 @@ namespace MedievalFoodAndDrinkArchiveApp.Repositories
 
         public Dish UpdateDish(Dish dish)
         {
-            throw new NotImplementedException();
+            // TODO: Implement for real repo.
+            // TODO: Update the respective dish in repository. (file or data set/record in database)
+
+            // Implementation for dummy repository.
+            return dish;
         }
 
         public void DeleteDish(int id)
