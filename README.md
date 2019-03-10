@@ -6,3 +6,5 @@ Some POST RESTClient samples
 [Create #1](https://github.com/feiro/MedievalMealsArchive/blob/master/Screenshot-Images/1-POST-Create-1.PNG)
 
 [[https://github.com/feiro/MedievalMealsArchive/blob/master/Screenshot-Images/1-POST-Create-1.PNG|alt=octocat]]
+
+![alt text](https://github.com/feiro/MedievalMealsArchive/blob/master/Screenshot-Images/1-POST-Create-1.PNG)
