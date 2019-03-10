@@ -27,7 +27,7 @@ namespace MedievalFoodAndDrinkArchiveApp.Repositories
 
         public Dish GetDishById(int id)
         {
-            throw new NotImplementedException();
+            return GetDishes()?.FirstOrDefault(x => x.Id == id);
         }
 
         public Dish CreateDish(Dish dish)

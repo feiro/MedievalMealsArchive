@@ -19,10 +19,33 @@ namespace MedievalFoodAndDrinkArchiveApp.Controllers
             _repository = repository;
         }
 
+        /**
+         * Get a complete list of dishes.
+         * Path: /api/dishes
+         */
         [HttpGet]
-        public IEnumerable<Dish> GetDishes()
+        public IEnumerable<Dish> Get()
         {
             return _repository.GetDishes();
         }
+
+        /**
+         * Get a specific dish by Id.
+         * Path (e.g.): /api/dishes/1
+         */
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var dish = _repository.GetDishById(id);
+
+            // Check for status code 404 = not found
+            if (dish == null)
+            {
+                return NotFound();
+            }
+            // Return HTTP Status code 200 and dish data values, if data for id exists.
+            return Ok(dish);
+        }
+
     }
 }
