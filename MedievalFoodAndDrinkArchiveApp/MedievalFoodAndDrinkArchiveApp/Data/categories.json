@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Breakfast",
+    "description": "E.g. Barley bread dipped in wine; teganites (pancake)"
+  },
+  {
+    "id": 2,
+    "name": "Lunch",
+    "description": "Bread and wine; light foods like figs, salted fish, cheeses, olives, and bread"
+  },
+  {
+    "id": 3,
+    "name": "Dinner",
+    "description": "E.g. eggs from quail and hens, fish, legumes, olives, cheeses, bread, figs, vegetables including arugula, asparagus, cabbage, carrots, and cucumbers; meats"
+  },
+  {
+    "id": 4,
+    "name": "Beverages (Main drink)",
+    "description": "Wine and Water; Thasos, Lesbos, and Chios wines; kykeon (combination of barley gruel, water (or wine), herbs, and goat cheese)"
+  },
+  {
+    "id": 5,
+    "name": "Dessert",
+    "description": "Cheeses, figs, or olives drizzled with honey"
+  },
+  {
+    "id": 6,
+    "name": "Fruit",
+    "description": "E.g. olives, carob, jujubes (red dates), bergamot oranges (citrus fruit), grapes, raisins, pomegranates, plums, apples, nuts, pears, quinces"
+  }
+]
