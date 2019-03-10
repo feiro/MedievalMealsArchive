@@ -32,7 +32,13 @@ namespace MedievalFoodAndDrinkArchiveApp.Repositories
 
         public Dish CreateDish(Dish dish)
         {
-            throw new NotImplementedException();
+            // TODO: implement
+            // TODO: Deserialize data. Add new object to list. Serialize.
+
+            // Shortcut demo implementation:
+            dish.Id = 9999;
+            return dish;
+
         }
 
         public Dish UpdateDish(Dish dish)

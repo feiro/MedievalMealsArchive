@@ -47,5 +47,21 @@ namespace MedievalFoodAndDrinkArchiveApp.Controllers
             return Ok(dish);
         }
 
+        /*
+         * Create a new dish / Update an existing dish in repository.
+         */
+        [HttpPost]
+        public IActionResult Post([FromBody] Dish dish)
+        {
+            // Check for required properties in model.
+            if (!ModelState.IsValid)
+            {
+                // Return Status code 400 and get information on ModelState with invalid data.
+                return BadRequest(ModelState);
+            }
+            var result = _repository.CreateDish(dish);
+            return CreatedAtAction("Get", new {id = dish.Id}, result);
+        }
+
     }
 }
