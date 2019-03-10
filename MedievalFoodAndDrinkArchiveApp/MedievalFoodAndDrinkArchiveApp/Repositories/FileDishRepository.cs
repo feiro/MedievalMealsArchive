@@ -52,7 +52,10 @@ namespace MedievalFoodAndDrinkArchiveApp.Repositories
 
         public void DeleteDish(int id)
         {
-            throw new NotImplementedException();
+            // TODO: Implement delete action for real repo.
+
+            // Implementation for dummy repository.
+            // "Do nothing."
         }
     }
 }

@@ -90,5 +90,22 @@ namespace MedievalFoodAndDrinkArchiveApp.Controllers
             return Ok(result);
         }
 
+        /**
+         * Delete a specific dish in repository.
+         */
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            // Execute plausibility check.
+            if (_repository.GetDishById(id) == null)
+            {
+                return NotFound();
+            }
+            _repository.DeleteDish(id);
+            // Status code "no content" = 204
+            return NoContent();
+        }
+
+
     }
 }
