@@ -29,7 +29,10 @@ namespace MedievalFoodAndDrinkArchiveApp
         public void ConfigureServices(IServiceCollection services)
         {
             // Use the same FileDishRepository per web request (= AddScoped). Dependency of type IDishRepository on runtime will use object of type FileDishRepository.
-            services.AddScoped<IDishRepository, FileDishRepository>();
+            // services.AddScoped<IDishRepository, FileDishRepository>();
+
+            // Register EF-based repo.
+            services.AddScoped<IDishRepository, EfDishRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<MedievalMealsArchiveContext>(

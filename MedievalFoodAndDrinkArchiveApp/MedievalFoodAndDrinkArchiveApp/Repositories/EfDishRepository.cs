@@ -18,12 +18,12 @@ namespace MedievalFoodAndDrinkArchiveApp.Repositories
          
         public IEnumerable<Dish> GetDishes()
         {
-            throw new NotImplementedException();
+            return _db.Dishes;
         }
 
         public Dish GetDishById(int id)
         {
-            throw new NotImplementedException();
+            return _db.Dishes.Find(id);
         }
 
         public Dish CreateDish(Dish dish)
@@ -35,7 +35,13 @@ namespace MedievalFoodAndDrinkArchiveApp.Repositories
 
         public Dish UpdateDish(Dish dish)
         {
-            throw new NotImplementedException();
+            var dishForUpdate = _db.Dishes.Find(dish.Id);
+            dishForUpdate.Name = dish.Name;
+            dishForUpdate.Description = dish.Description;
+            dishForUpdate.Price = dish.Price;
+            dishForUpdate.CategoryId = dish.CategoryId;
+            _db.SaveChanges();
+            return dishForUpdate;
         }
 
         public void DeleteDish(int id)
