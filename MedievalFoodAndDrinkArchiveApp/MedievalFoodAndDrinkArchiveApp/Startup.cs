@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace MedievalFoodAndDrinkArchiveApp
 {
@@ -32,10 +33,11 @@ namespace MedievalFoodAndDrinkArchiveApp
             // Use the same FileDishRepository per web request (= AddScoped). Dependency of type IDishRepository on runtime will use object of type FileDishRepository.
             // services.AddScoped<IDishRepository, FileDishRepository>();
 
-            // Register EF-based repo.
+            // Register EF-based repos.
             services.AddScoped<IDishRepository, EfDishRepository>();
+            services.AddScoped<ICategoryRepository, EfCategoryRepository>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddDbContext<MedievalMealsArchiveContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
