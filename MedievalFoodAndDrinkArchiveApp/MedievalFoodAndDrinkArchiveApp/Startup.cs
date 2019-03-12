@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MedievalFoodAndDrinkArchiveApp.Data;
 using MedievalFoodAndDrinkArchiveApp.Models;
 using MedievalFoodAndDrinkArchiveApp.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -40,7 +41,7 @@ namespace MedievalFoodAndDrinkArchiveApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MedievalMealsArchiveContext db)
         {
             if (env.IsDevelopment())
             {
@@ -52,6 +53,8 @@ namespace MedievalFoodAndDrinkArchiveApp
             }
 
             app.UseHttpsRedirection();
+
+            DbInitializer.Initialize(db, env);
             app.UseMvc();
         }
     }
