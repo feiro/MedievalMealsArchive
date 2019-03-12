@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MedievalFoodAndDrinkArchiveApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MedievalFoodAndDrinkArchiveApp.Repositories
 {
@@ -18,12 +19,19 @@ namespace MedievalFoodAndDrinkArchiveApp.Repositories
          
         public IEnumerable<Dish> GetDishes()
         {
-            return _db.Dishes;
+            // return _db.Dishes;
+
+            // Even include load of category when getting dishes.
+            return _db.Dishes.Include(x => x.Category);
         }
 
         public Dish GetDishById(int id)
         {
-            return _db.Dishes.Find(id);
+            // Category information will not be loaded.
+            // return _db.Dishes.Find(id);
+
+            // Even include load of category information when getting dish.
+            return _db.Dishes.Include(x => x.Category).SingleOrDefault(x => x.Id == id);
         }
 
         public Dish CreateDish(Dish dish)

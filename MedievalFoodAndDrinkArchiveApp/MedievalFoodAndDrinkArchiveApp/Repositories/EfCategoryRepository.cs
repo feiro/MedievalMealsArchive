@@ -18,13 +18,17 @@ namespace MedievalFoodAndDrinkArchiveApp.Repositories
         }
         public IEnumerable<Category> GetCategories()
         {
-            // Include even load of dishes when getting categories.
+            // Even include load of dishes when getting categories.
             return _db.Categories.Include(x => x.Dishes);
         }
 
         public Category GetCategoryById(int id)
         {
-            return _db.Categories.Find(id);
+            // Dish information will not be loaded.
+            // return _db.Categories.Find(id);
+
+            // Even include load of dishes when getting categories.
+            return _db.Categories.Include(x => x.Dishes).SingleOrDefault(x => x.Id == id);  
         }
 
         public Category CreateCategory(Category category)
