@@ -57,6 +57,10 @@ namespace MedievalFoodAndDrinkArchiveApp
             app.UseHttpsRedirection();
 
             DbInitializer.Initialize(db, env);
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseMvc();
         }
     }
