@@ -11,6 +11,8 @@
 
 ![Create #4 Bad Request](https://github.com/feiro/MedievalMealsArchive/blob/master/Screenshot-Images/4-POST-Create-Bad-Request-2.PNG)
 
+### Create db with EF
+Adjust ConnectionStrings in appsettings.json.
 
 
 
