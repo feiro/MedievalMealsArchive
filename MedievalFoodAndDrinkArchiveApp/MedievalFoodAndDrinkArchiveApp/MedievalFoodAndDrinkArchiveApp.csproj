@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="src\app\categories\category.ts" />
+    <None Remove="src\app\dishes\dish.ts" />
+    <None Remove="src\app\medievalmealarchive.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -17,6 +23,12 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\categories\category.ts" />
+    <TypeScriptCompile Include="src\app\dishes\dish.ts" />
+    <TypeScriptCompile Include="src\app\medievalmealarchive.service.ts" />
   </ItemGroup>
 
 </Project>
