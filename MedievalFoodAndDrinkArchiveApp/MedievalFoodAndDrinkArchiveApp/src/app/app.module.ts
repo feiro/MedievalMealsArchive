@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioButton } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
@@ -20,15 +22,17 @@ import { AppComponent } from './app.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-      AppRoutingModule,
-      MatToolbarModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        HttpClientModule
+
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
