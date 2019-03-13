@@ -18,12 +18,14 @@ import { AppRoutingModule } from './app-routing.module';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
-
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+
     ],
     imports: [
         BrowserModule,
