@@ -1,18 +1,20 @@
-﻿import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-
-import { Category } from "./categories/category";
+﻿import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { Subject} from 'rxjs'
 
 @Injectable()
-export class MedievalMealArchiveService {
+export class ApiService {
 
-    constructor(private http: Http) {
+    private selectedDish = new Subject<any>();
+    dishSelected = this.selectedDish.asObservable();
 
+    constructor(private http: HttpClient) {}  
+
+    getDishes(){
+        return this.http.get('https://localhost:44361/api/dishes');
     }
 
-    getCategories(): Promise<Category[]> {
-        return this.http.get('api/categories')
-            .toPromise()
-            .then(r => r.json() as Category[]);
+    selectDish(dish) {
+        this.selectedDish.next(dish)
     }
 }

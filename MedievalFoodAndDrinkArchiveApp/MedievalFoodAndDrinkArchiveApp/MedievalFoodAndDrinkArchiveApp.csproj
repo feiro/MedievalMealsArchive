@@ -12,6 +12,7 @@
     <None Remove="src\app\dishes\dish.ts" />
     <None Remove="src\app\header\header.component.ts" />
     <None Remove="src\app\medievalmealarchive.service.ts" />
+    <None Remove="src\app\shared\services\dataService.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +34,7 @@
     <TypeScriptCompile Include="src\app\dishes\dish.ts" />
     <TypeScriptCompile Include="src\app\header\header.component.ts" />
     <TypeScriptCompile Include="src\app\medievalmealarchive.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\dataService.ts" />
   </ItemGroup>
 
 </Project>

@@ -9,32 +9,52 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { 
+    MatButtonModule, 
+    MatInputModule, 
+    MatCardModule, 
+    MatListModule, 
+    MatToolbarModule,
+    MatExpansionModule,
+    MatRadioModule,
+    MatDialogModule
+  } from '@angular/material'
 
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { DishesComponent } from './dishes.component';
+import { ApiService } from './medievalmealarchive.service';
+
+
 
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
+        DishesComponent
 
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         MatToolbarModule,
-        HttpClientModule
+        HttpClientModule,
+        MatCardModule,
+        MatListModule,
+        MatToolbarModule,
+        MatExpansionModule,
+        MatRadioModule,
+        MatDialogModule
 
     ],
-    providers: [],
+    providers: [ApiService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

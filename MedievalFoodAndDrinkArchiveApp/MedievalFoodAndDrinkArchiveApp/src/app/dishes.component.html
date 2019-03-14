@@ -1,0 +1,13 @@
+
+
+
+<mat-card>
+    <h1>List of available dishes</h1>
+    <mat-card-content>
+        <mat-list *ngFor="let dish of dishes">
+            <mat-list-item class="clickLink" (click)="api.selectDish(dish)"> {{dish.id}} {{dish.name}}: <em>{{dish.description}}</em> </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+</mat-card>
