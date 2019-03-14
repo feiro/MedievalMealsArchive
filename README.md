@@ -5,7 +5,7 @@
 #### Simple listing
 
 ng serve --watch
-![List dishes #1](https://github.com/feiro/MedievalMealsArchive/blob/master/Screenshot-Images/2-POST-Create-2.PNG/List-of-Dishes.PNG)
+![List dishes #1](https://github.com/feiro/MedievalMealsArchive/blob/master/Screenshot-Images/List-of-Dishes.PNG)
 
  
 
